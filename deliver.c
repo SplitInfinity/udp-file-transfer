@@ -66,9 +66,6 @@ int main (int argc, char **argv) {
 
         unsigned int total_frag = ((inputFileInfo.st_size) / MAX_DATA_SIZE) + 1;
         unsigned int current_frag_no = 1;
-        // unsigned int total_frag_digits = getNumDigits(total_frag);
-        // unsigned int maxPacketSizeNoMsg = 2 * total_frag_digits + MAX_DATA_SIZE_DIGITS + strlen(inputFileName) + NUM_COLONS;
-        // char *currentPacket = (char*) malloc (sizeof(char)*(maxPacketSizeNoMsg + MAX_DATA_SIZE));
 
         char *byteArrayPacket;
         Packet currentPacket;
@@ -78,7 +75,6 @@ int main (int argc, char **argv) {
         while (current_frag_no <= total_frag) {
             currentPacket.frag_no = current_frag_no;
 
-            //char fileBuffer[MAX_DATA_SIZE + 1] = {0};
             bool endOfFile = feof(inputFile);
             char nextChar;
 
@@ -97,7 +93,6 @@ int main (int argc, char **argv) {
             currentPacket.size = i;
 
             unsigned int currentPacketTotalSize = createPacket (&byteArrayPacket, &currentPacket);
-            // unsigned int currentPacketTotalSize = createPacket (currentPacket, fileBuffer,  inputFileName, i, total_frag, current_frag_no, maxPacketSizeNoMsg);
 
             char buf[BUFLEN];
             int ackReceived = 0;
