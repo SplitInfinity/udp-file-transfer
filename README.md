@@ -1,6 +1,6 @@
 # udp-file-transfer
 ###Overview
-This repository contains a simple UDP-based file transfer client/server program. The client program (`deliver`) transmits any given file (text, audio, image, you name it) to the server program (`server`) using UDP (user Datagram Protocol). Since UDP does not offer reliable service, error control is done using Stop-and-Wait ARQ with a 1-second timeout on the client side. The client segments the file into fragments that are at most 1000 bytes long and sends these individual fragments to the server. 
+This repository contains a simple UDP-based file transfer client/server program. The client program (`deliver`) transmits any given file (text, audio, image, you name it) to the server program (`server`) using UDP (User Datagram Protocol). Since UDP does not offer reliable service, error control is done using Stop-and-Wait ARQ with a 1-second timeout on the client side. The client segments the file into fragments that are at most 1000 bytes long and sends these individual fragments to the server. 
 ###Build Instructions
 To build the client and server executables, run the following command in the main directory:
 ```sh
